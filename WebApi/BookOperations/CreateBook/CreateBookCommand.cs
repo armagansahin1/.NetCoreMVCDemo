@@ -7,25 +7,25 @@ namespace WebApi.BookOperations.CreateBook
     public class CreateBookCommand
     {
         private readonly BookStoreDbContext _dbContext;
-
+        public CreateBookModel Model { get; set; }
         public CreateBookCommand(BookStoreDbContext dbContext)
         {
             _dbContext = dbContext ;
         }
         
-        public void Handle(CreateBookModel createBookModel)
+        public void Handle()
         {
-            var book = _dbContext.Books.SingleOrDefault(b=>b.Title == createBookModel.Title);
+            var book = _dbContext.Books.SingleOrDefault(b=>b.Title == Model.Title);
             if (book is not null)
             {
                 throw new InvalidOperationException("Bu kitap bulunmakta");
             }
 
             book = new Book(){
-                GenreId = createBookModel.GenreId,
-                PageCount = createBookModel.PageCount,
-                PublishDate = createBookModel.PublishDate,
-                Title = createBookModel.Title
+                GenreId = Model.GenreId,
+                PageCount = Model.PageCount,
+                PublishDate = Model.PublishDate,
+                Title = Model.Title
             };
 
             _dbContext.Books.Add(book);

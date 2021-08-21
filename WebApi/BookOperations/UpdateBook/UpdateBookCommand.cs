@@ -7,35 +7,35 @@ namespace WebApi.BookOperations.UpdateBook
     public class UpdateBookCommand
     {
         private readonly BookStoreDbContext _dbContext;
+        public int Id { get; set; }
+        public UpdateBookModel Model { get; set; }
 
         public UpdateBookCommand(BookStoreDbContext dbContext)
         {
             _dbContext = dbContext;
         }
 
-        public void Handle(int id, UpdateBookModel updateBookModel)
+        public void Handle()
         {
-            var bookToUpdate = _dbContext.Books.SingleOrDefault(b => b.Id == id);
+            var bookToUpdate = _dbContext.Books.SingleOrDefault(b => b.Id == Id);
             if (bookToUpdate is null)
             {
                 throw new InvalidOperationException("Kitap Bulunamadı");
             }
 
-           bookToUpdate.GenreId = updateBookModel.GenreId != default ? updateBookModel.GenreId : bookToUpdate.GenreId;
-           bookToUpdate.PageCount = updateBookModel.PageCount !=default ? updateBookModel.PageCount : bookToUpdate.PageCount;
-           bookToUpdate.Title = updateBookModel.Title != default ? updateBookModel.Title : bookToUpdate.Title;
-           bookToUpdate.PublishDate = updateBookModel.PublishDate;
-           _dbContext.SaveChanges();
+            bookToUpdate.GenreId = Model.GenreId != default ? Model.GenreId : bookToUpdate.GenreId;
+
+            bookToUpdate.Title = Model.Title != default ? Model.Title : bookToUpdate.Title;
+
+            _dbContext.SaveChanges();
 
 
-         }
+        }
 
         public class UpdateBookModel
         {
             public string Title { get; set; }
             public int GenreId { get; set; }
-            public int PageCount { get; set; }
-            public DateTime PublishDate { get; set; }
         }
     }
 }
