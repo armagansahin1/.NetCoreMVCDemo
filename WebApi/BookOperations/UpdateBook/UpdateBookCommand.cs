@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using AutoMapper;
 using WebApi.DbOperations;
 
 namespace WebApi.BookOperations.UpdateBook
@@ -13,6 +14,7 @@ namespace WebApi.BookOperations.UpdateBook
         public UpdateBookCommand(BookStoreDbContext dbContext)
         {
             _dbContext = dbContext;
+  
         }
 
         public void Handle()
@@ -26,7 +28,7 @@ namespace WebApi.BookOperations.UpdateBook
             bookToUpdate.GenreId = Model.GenreId != default ? Model.GenreId : bookToUpdate.GenreId;
 
             bookToUpdate.Title = Model.Title != default ? Model.Title : bookToUpdate.Title;
-
+            
             _dbContext.SaveChanges();
 
 

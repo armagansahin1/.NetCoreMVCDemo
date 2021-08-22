@@ -1,5 +1,7 @@
 using System;
 using System.Linq;
+using AutoMapper;
+using WebApi.Common;
 using WebApi.DbOperations;
 
 namespace WebApi.BookOperations.CreateBook
@@ -7,10 +9,13 @@ namespace WebApi.BookOperations.CreateBook
     public class CreateBookCommand
     {
         private readonly BookStoreDbContext _dbContext;
+        private readonly IMapper _mapper;
         public CreateBookModel Model { get; set; }
-        public CreateBookCommand(BookStoreDbContext dbContext)
+        public CreateBookCommand(BookStoreDbContext dbContext, IMapper mapper)
         {
             _dbContext = dbContext ;
+            _mapper = mapper ;
+           
         }
         
         public void Handle()
@@ -21,12 +26,7 @@ namespace WebApi.BookOperations.CreateBook
                 throw new InvalidOperationException("Bu kitap bulunmakta");
             }
 
-            book = new Book(){
-                GenreId = Model.GenreId,
-                PageCount = Model.PageCount,
-                PublishDate = Model.PublishDate,
-                Title = Model.Title
-            };
+            book = _mapper.Map<Book>(Model);
 
             _dbContext.Books.Add(book);
             _dbContext.SaveChanges();
