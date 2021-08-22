@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using AutoMapper;
-using WebApi.Common;
 using WebApi.DbOperations;
 
 namespace WebApi.BookOperations.GetBooks
