@@ -5,16 +5,18 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
+using WebApi.Services;
 
 namespace WebApi.Middlewares
 {
     public class CustomExceptionMiddleWare
     {
         private readonly RequestDelegate _next;
-
-        public CustomExceptionMiddleWare(RequestDelegate next)
+        private readonly ILoggerService _logger;
+        public CustomExceptionMiddleWare(RequestDelegate next, ILoggerService logger)
         {
             _next = next;
+            _logger = logger;
         }
 
         public async Task Invoke(HttpContext context)
@@ -26,12 +28,12 @@ namespace WebApi.Middlewares
             try
             {
             string message = "[Request] HTTP :" + context.Request.Path + " - " + context.Request.Method;
-            Console.WriteLine(message);
+            _logger.Write(message);
             await _next(context);
             watch.Stop();
             message = "[Response] HTTP :" + context.Request.Path + " - " + context.Request.Method + " - " + context.Response.StatusCode + " - in " +
             watch.ElapsedMilliseconds + " ms";
-            Console.WriteLine(message);
+            _logger.Write(message);
             }
             catch (Exception ex)
             {
@@ -48,7 +50,7 @@ namespace WebApi.Middlewares
             context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
             var message = "[Error] HTTP :" + context.Request.Path + " - " + context.Request.Method + " - " + context.Response.StatusCode + " Error Message : "+ ex.Message+ " - in " +
             watch.ElapsedMilliseconds + " ms";
-            Console.WriteLine(message);
+            _logger.Write(message);
             
 
             var result = JsonConvert.SerializeObject(new {error = ex.Message}, Formatting.None);
