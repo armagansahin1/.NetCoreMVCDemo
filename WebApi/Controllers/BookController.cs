@@ -37,19 +37,13 @@ namespace WebApi.AddControllers
         public IActionResult GetById(int id)
         {
             GetBookDetails query = new GetBookDetails(_context, _mapper);
-            try
-            {
+            
                 query.Id = id;
                 GetBookDetailsValidator validator = new GetBookDetailsValidator();
                 validator.ValidateAndThrow(query);
                 var result = query.Handle();
                 return Ok(result);
-            }
-            catch (Exception ex)
-            {
-
-                return BadRequest(ex.Message);
-            }
+ 
         }
 
         [HttpPost]
@@ -58,19 +52,13 @@ namespace WebApi.AddControllers
 
             CreateBookCommand command = new CreateBookCommand(_context, _mapper);
 
-            try
-            {
+         
                 CreateBookCommandValidator validator = new CreateBookCommandValidator();
                 command.Model = newBook;
                 validator.ValidateAndThrow(command);
                 command.Handle();
                 return Ok("Eklendi");
-            }
-            catch (Exception ex)
-            {
-
-                return BadRequest(ex.Message);
-            }
+           
 
         }
 
@@ -78,39 +66,27 @@ namespace WebApi.AddControllers
         public IActionResult UpdateBook(int id, [FromBody] UpdateBookModel book)
         {
             UpdateBookCommand command = new UpdateBookCommand(_context);
-            try
-            {
+           
                 command.Model = book;
                 command.Id = id;
                 UpdateBookCommandValidator validator = new UpdateBookCommandValidator();
                 validator.ValidateAndThrow(command);
                 command.Handle();
                 return Ok("Güncellendi");
-            }
-            catch (Exception ex)
-            {
-
-                return BadRequest(ex.Message);
-            }
+        
         }
 
         [HttpDelete("{id}")]
         public IActionResult DeleteBook(int id)
         {
             DeleteBookCommand command = new DeleteBookCommand(_context);
-            try
-            {
+          
                 command.Id = id;
                 DeleteBookCommandValidator validator = new DeleteBookCommandValidator();
                 validator.ValidateAndThrow(command);
                 command.Handle();
                 return Ok("Silindi");
-            }
-            catch (Exception ex)
-            {
-
-                return BadRequest(ex.Message);
-            }
+   
         }
     }
 }
