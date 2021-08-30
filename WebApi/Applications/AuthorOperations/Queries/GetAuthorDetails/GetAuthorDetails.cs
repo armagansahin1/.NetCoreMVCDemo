@@ -7,10 +7,10 @@ namespace WebApi.Applications.AuthorOperations.Queries.GetAuthorDetails
 {
     public class GetAuthorDetails
     {
-        private readonly BookStoreDbContext _context;
+        private readonly IBookStoreDbContext _context;
         private readonly IMapper _mapper;
         public int AuthorId { get; set; }
-        public GetAuthorDetails(BookStoreDbContext context, IMapper mapper)
+        public GetAuthorDetails(IBookStoreDbContext context, IMapper mapper)
         {
             _mapper = mapper;
             _context = context;

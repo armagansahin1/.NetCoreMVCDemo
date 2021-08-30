@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Anil\\Desktop\\Patika\\BookStore\\WebApi\\WebApi.csproj": {}
+    "c:\\Users\\Anil\\Desktop\\Patika\\BookStore\\WebApi\\WebApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Anil\\Desktop\\Patika\\BookStore\\WebApi\\WebApi.csproj": {
+    "c:\\Users\\Anil\\Desktop\\Patika\\BookStore\\WebApi\\WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Anil\\Desktop\\Patika\\BookStore\\WebApi\\WebApi.csproj",
+        "projectUniqueName": "c:\\Users\\Anil\\Desktop\\Patika\\BookStore\\WebApi\\WebApi.csproj",
         "projectName": "WebApi",
-        "projectPath": "C:\\Users\\Anil\\Desktop\\Patika\\BookStore\\WebApi\\WebApi.csproj",
+        "projectPath": "c:\\Users\\Anil\\Desktop\\Patika\\BookStore\\WebApi\\WebApi.csproj",
         "packagesPath": "C:\\Users\\Anil\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Anil\\Desktop\\Patika\\BookStore\\WebApi\\obj\\",
+        "outputPath": "c:\\Users\\Anil\\Desktop\\Patika\\BookStore\\WebApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Anil\\AppData\\Roaming\\NuGet\\NuGet.Config"

@@ -22,9 +22,6 @@ namespace WebApi.Middlewares
         public async Task Invoke(HttpContext context)
         {   
             var watch = Stopwatch.StartNew();
-            
-            
-
             try
             {
             string message = "[Request] HTTP :" + context.Request.Path + " - " + context.Request.Method;

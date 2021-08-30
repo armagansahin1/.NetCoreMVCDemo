@@ -9,6 +9,7 @@ namespace WebApi.Applications.BookOperations.Commands.UpdateBook
             RuleFor(command => command.Id).GreaterThan(0);
             RuleFor(command => command.Model.GenreId).GreaterThan(0);
             RuleFor(command => command.Model.Title).NotNull();
+            RuleFor(command => command.Model.Title).NotEmpty();
         }
     }
 }

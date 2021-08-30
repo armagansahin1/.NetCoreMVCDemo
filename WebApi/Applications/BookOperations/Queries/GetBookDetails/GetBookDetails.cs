@@ -9,12 +9,12 @@ namespace WebApi.Applications.BookOperations.Queries.GetBookDetails
 {
     public class GetBookDetails
     {
-        private readonly BookStoreDbContext _dbContext;
+        private readonly IBookStoreDbContext _dbContext;
         private readonly IMapper _mapper;
         public int Id { get; set; }
 
         public BookDetailModel viewModel;
-        public GetBookDetails(BookStoreDbContext dbContext, IMapper mapper )
+        public GetBookDetails(IBookStoreDbContext dbContext, IMapper mapper )
         {
             _dbContext = dbContext;
             _mapper = mapper;

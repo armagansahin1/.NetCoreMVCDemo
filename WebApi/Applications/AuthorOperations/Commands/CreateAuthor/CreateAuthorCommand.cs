@@ -8,10 +8,10 @@ namespace WebApi.Applications.AuthorOperations.Commands.CreateAuthor
 {
     public class CreateAuthorCommand
     {
-        private readonly BookStoreDbContext _context;
+        private readonly IBookStoreDbContext _context;
         private readonly IMapper _mapper;
         public CreateAuthorModel Model { get; set; }
-        public CreateAuthorCommand(BookStoreDbContext context, IMapper mapper)
+        public CreateAuthorCommand(IBookStoreDbContext context, IMapper mapper)
         {
             _mapper = mapper;
             _context = context;
