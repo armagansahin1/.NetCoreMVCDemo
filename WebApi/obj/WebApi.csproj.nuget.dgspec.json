@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\Anil\\Desktop\\Patika\\BookStore\\WebApi\\WebApi.csproj": {}
+    "C:\\Users\\Anil\\Desktop\\Patika\\BookStore\\WebApi\\WebApi.csproj": {}
   },
   "projects": {
-    "c:\\Users\\Anil\\Desktop\\Patika\\BookStore\\WebApi\\WebApi.csproj": {
+    "C:\\Users\\Anil\\Desktop\\Patika\\BookStore\\WebApi\\WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\Anil\\Desktop\\Patika\\BookStore\\WebApi\\WebApi.csproj",
+        "projectUniqueName": "C:\\Users\\Anil\\Desktop\\Patika\\BookStore\\WebApi\\WebApi.csproj",
         "projectName": "WebApi",
-        "projectPath": "c:\\Users\\Anil\\Desktop\\Patika\\BookStore\\WebApi\\WebApi.csproj",
+        "projectPath": "C:\\Users\\Anil\\Desktop\\Patika\\BookStore\\WebApi\\WebApi.csproj",
         "packagesPath": "C:\\Users\\Anil\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\Anil\\Desktop\\Patika\\BookStore\\WebApi\\obj\\",
+        "outputPath": "C:\\Users\\Anil\\Desktop\\Patika\\BookStore\\WebApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Anil\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -49,6 +49,10 @@
             "FluentValidation": {
               "target": "Package",
               "version": "[10.3.1, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[5.0.9, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",

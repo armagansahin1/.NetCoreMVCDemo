@@ -7,14 +7,14 @@ using WebApi.DbOperations;
 
 namespace WebApi.Applications.BookOperations.Queries.GetBookDetails
 {
-    public class GetBookDetails
+    public class GetBookDetailsQuery
     {
         private readonly IBookStoreDbContext _dbContext;
         private readonly IMapper _mapper;
         public int Id { get; set; }
 
         public BookDetailModel viewModel;
-        public GetBookDetails(IBookStoreDbContext dbContext, IMapper mapper )
+        public GetBookDetailsQuery(IBookStoreDbContext dbContext, IMapper mapper )
         {
             _dbContext = dbContext;
             _mapper = mapper;

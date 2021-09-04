@@ -49,7 +49,6 @@ namespace WebApi.Middlewares
             watch.ElapsedMilliseconds + " ms";
             _logger.Write(message);
             
-
             var result = JsonConvert.SerializeObject(new {error = ex.Message}, Formatting.None);
             return context.Response.WriteAsync(result);
         }

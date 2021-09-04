@@ -36,3 +36,10 @@ C:\Users\Anil\Desktop\Patika\BookStore\WebApi\obj\Debug\net5.0\WebApi.csproj.Cop
 C:\Users\Anil\Desktop\Patika\BookStore\WebApi\obj\Debug\net5.0\WebApi.dll
 C:\Users\Anil\Desktop\Patika\BookStore\WebApi\obj\Debug\net5.0\WebApi.pdb
 C:\Users\Anil\Desktop\Patika\BookStore\WebApi\obj\Debug\net5.0\WebApi.genruntimeconfig.cache
+C:\Users\Anil\Desktop\Patika\BookStore\WebApi\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Anil\Desktop\Patika\BookStore\WebApi\bin\Debug\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Anil\Desktop\Patika\BookStore\WebApi\bin\Debug\net5.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\Anil\Desktop\Patika\BookStore\WebApi\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Anil\Desktop\Patika\BookStore\WebApi\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Anil\Desktop\Patika\BookStore\WebApi\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Anil\Desktop\Patika\BookStore\WebApi\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll

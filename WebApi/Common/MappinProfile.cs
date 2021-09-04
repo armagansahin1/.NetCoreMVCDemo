@@ -4,11 +4,12 @@ using static WebApi.Applications.AuthorOperations.Commands.CreateAuthor.CreateAu
 using static WebApi.Applications.AuthorOperations.Queries.GetAuthorDetails.GetAuthorDetails;
 using static WebApi.Applications.AuthorOperations.Queries.GetAuthors.GetAuthorsQuery;
 using static WebApi.Applications.BookOperations.Commands.CreateBook.CreateBookCommand;
-using static WebApi.Applications.BookOperations.Queries.GetBookDetails.GetBookDetails;
+using static WebApi.Applications.BookOperations.Queries.GetBookDetails.GetBookDetailsQuery;
 using static WebApi.Applications.BookOperations.Queries.GetBooks.GetBooksQuery;
 using static WebApi.Applications.GenreOperations.Commands.CreateGenre.CreateGenreCommand;
 using static WebApi.Applications.GenreOperations.Queries.GetGenreDetails.GetGenreDetails;
 using static WebApi.Applications.GenreOperations.Queries.GetGenres.GetGenresQuery;
+using static WebApi.Applications.UserOperations.Commands.CreateUser.CreateUserCommand;
 
 namespace WebApi.Common
 {
@@ -37,6 +38,8 @@ namespace WebApi.Common
             CreateMap<Author, GetAuthorDetailsModel>().ForMember(dest => dest.DateOfBirth, opt => opt.MapFrom(src => src.DateOfBirth.ToString("dd/mm/yyyy")));
 
             CreateMap<CreateAuthorModel,Author>();
+
+            CreateMap<CreateUserModel,User>();
         }
     }
 }

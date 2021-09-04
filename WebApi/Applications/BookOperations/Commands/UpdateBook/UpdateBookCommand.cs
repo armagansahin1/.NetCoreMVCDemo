@@ -20,7 +20,7 @@ namespace WebApi.Applications.BookOperations.Commands.UpdateBook
         public void Handle()
         {
             var bookToUpdate = _dbContext.Books.SingleOrDefault(b => b.Id == Id);
-            if (bookToUpdate is null)
+            if (bookToUpdate == null)
             {
                 throw new InvalidOperationException("Kitap Bulunamadı");
             }

@@ -9,9 +9,11 @@ using WebApi.Applications.BookOperations.Commands.UpdateBook;
 using WebApi.Applications.BookOperations.Commands.DeleteBook;
 using static WebApi.Applications.BookOperations.Commands.CreateBook.CreateBookCommand;
 using static WebApi.Applications.BookOperations.Commands.UpdateBook.UpdateBookCommand;
+using Microsoft.AspNetCore.Authorization;
 
 namespace WebApi.AddControllers
 {
+    [Authorize]
     [ApiController]
     [Route("[controller]s")]
     public class BookController : ControllerBase
@@ -35,7 +37,7 @@ namespace WebApi.AddControllers
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
-            GetBookDetails query = new GetBookDetails(_context, _mapper);
+            GetBookDetailsQuery query = new GetBookDetailsQuery(_context, _mapper);
             
                 query.Id = id;
                 GetBookDetailsValidator validator = new GetBookDetailsValidator();

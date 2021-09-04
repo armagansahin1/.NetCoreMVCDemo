@@ -44,7 +44,7 @@ namespace WebApi.Applications.BookOperations.Commands.CreateBook
         private Book IsBookExist(string title)
         {
             var book = _dbContext.Books.SingleOrDefault(b=>b.Title == title);
-            if (book is not null)
+            if (book != null)
             {
                 throw new InvalidOperationException("Bu kitap bulunmakta");
             }
@@ -54,7 +54,7 @@ namespace WebApi.Applications.BookOperations.Commands.CreateBook
         private void IsAuthorExist(int authorId)
         {
             var result = _dbContext.Authors.SingleOrDefault(x=>x.Id==authorId);
-            if (result is null)
+            if (result == null)
             {
                 throw new InvalidOperationException("Kayıtlı Yazar Bulunamadı");
             }
@@ -62,7 +62,7 @@ namespace WebApi.Applications.BookOperations.Commands.CreateBook
         private void IsGenreExist(int genreId)
         {
             var result = _dbContext.Genres.SingleOrDefault(x=>x.Id==genreId);
-            if (result is null)
+            if (result == null)
             {
                 throw new InvalidOperationException("Kategori Bulunamadı");
             }

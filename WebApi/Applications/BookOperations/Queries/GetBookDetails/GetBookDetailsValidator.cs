@@ -2,7 +2,7 @@ using FluentValidation;
 
 namespace WebApi.Applications.BookOperations.Queries.GetBookDetails
 {
-    public class GetBookDetailsValidator : AbstractValidator<GetBookDetails>
+    public class GetBookDetailsValidator : AbstractValidator<GetBookDetailsQuery>
     {
         public GetBookDetailsValidator()
         {
